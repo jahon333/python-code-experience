@@ -1,0 +1,34 @@
+def user_info(ism,familiya,tyil,tjoy,email='',telraqam='',joriyyil=2024):
+   """Foydanaluvchidan ismi, familiyasi, tug'ilgan yili,
+   tug'ilgan joyi, email manzili va telefon raqamini qabul qilib,
+   lug'at ko'rinishida qaytaruvchi funksiya yozing.
+   Lug'atda foydalanuvchu yoshi ham bo'lsin. Ba'zi argumentlarni kiritishni ixtiyoriy qiling
+   (masalan, tel.raqam, el.manzil)"""
+   user = {
+   'ism':ism,
+   'familiya':familiya,
+   'tyil':tyil,
+   'tjoy':tjoy,
+   'email':email,
+   'telraqam':telraqam,
+   'yosh':joriyyil-tyil
+   }
+   return user
+
+talaba = user_info('ryan','giggs',1984,'wales')
+talaba1 = user_info('wayne','rooney',1993,'england','rooney@gmail.com')
+talaba2 = user_info('michael','carrick',1985,'ireland',telraqam=123457900)
+players = [talaba,talaba1,talaba2]
+for talaba in players:
+   n=talaba['ism'].upper()
+   sn=talaba['familiya'].upper()
+   ty=talaba['tyil']
+   tj=talaba['tjoy'].title()
+   age=talaba['yosh']
+   if talaba['email']:
+      e_mail = talaba['email']
+   else:e_mail="Nomalum"
+   if talaba['telraqam']:
+      teln=talaba['telraqam']
+   else:teln="Nomalum"
+   print(f"{n} {sn} - {ty}da {tj}da tug'ilgan, \n hozirda {age} yoshda.\nEmaili:{e_mail},Telefon raqami - {teln}")
